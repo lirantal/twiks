@@ -1,5 +1,10 @@
 <h1 align="center">🚀 twisome</h1>
 <p align="center">undo for your tweets and an upgraded awesome twitter experience</p>
+
+<p align="center">
+  <img src="https://github.com/lirantal/twisome/blob/master/.github/twisome-demo-1.png" />
+</p>
+
 <div align="center">
   <a href="https://github.com/lirantal/twisome/actions?workflow=CI"><img src="https://github.com/lirantal/twisome/workflows/CI/badge.svg" alt="build"/></a>
   <a href="https://github.com/abhijithvijayan/web-extension-starter/blob/master/LICENSE">
@@ -23,7 +28,9 @@ Like it? Star ⭐️ it on [GitHub](https://github.com/lirantal/twisome/stargaze
 
 ## Demo
 
-TBD
+<p align="center">
+  <img src="https://github.com/lirantal/twisome/blob/master/.github/twisome-demo-1.gif" />
+</p>
 
 ## Bugs
 
