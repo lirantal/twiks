@@ -1,14 +1,14 @@
 {
-  "name": "web-extension-starter",
+  "name": "twisome",
   "version": "1.0.0",
-  "description": "Web extension starter",
+  "description": "Twisome for an Awesome Twitter experience",
   "private": true,
   "license": "MIT",
-  "repository": "https://github.com/abhijithvijayan/web-extension-starter.git",
+  "repository": "https://github.com/lirantal/twisome.git",
   "author": {
-    "name": "abhijithvijayan",
-    "email": "email@abhijithvijayan.in",
-    "url": "https://abhijithvijayan.in"
+    "name": "Liran Tal",
+    "email": "liran.tal@gmail.com",
+    "url": "https://github.com/lirantal"
   },
   "engines": {
     "node": ">=10.0.0",

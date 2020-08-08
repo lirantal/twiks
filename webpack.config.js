@@ -21,6 +21,7 @@ const extensionReloaderPlugin =
         entries: {
           // TODO: reload manifest on update
           contentScript: 'contentScript',
+          injected: 'injected',
           background: 'background',
           extensionPage: ['popup', 'options'],
         },
@@ -56,6 +57,7 @@ module.exports = {
     manifest: './source/manifest.json',
     background: './source/scripts/background.js',
     contentScript: './source/scripts/contentScript.js',
+    injected: './source/injected/twisome.js',
     popup: './source/scripts/popup.js',
     options: './source/scripts/options.js',
     styles: ['./source/styles/popup.scss', './source/styles/options.scss'],
@@ -80,7 +82,7 @@ module.exports = {
       },
       {
         test: /.(js|jsx)$/,
-        include: [path.resolve(__dirname, 'source/scripts')],
+        include: [path.resolve(__dirname, 'source/scripts'), path.resolve(__dirname, 'source/injected')],
         loader: 'babel-loader',
 
         options: {
