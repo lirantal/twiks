@@ -1,5 +1,5 @@
 const UNDO_DELAY_TIME = 5000
-const DELAY_TIME_ATTACH_UNDO_BUTTON = 1000
+const DELAY_TIME_ATTACH_UNDO_BUTTON = 1500
 const COUNT_DOWN_TIMER_TIME = 1000
 const DELAY_TIME_START_SEARCH_ON_PAGE = 2000
 const TWITTER_BUTTON_SELECTOR = '[data-testid="tweetButtonInline"]'
@@ -11,7 +11,7 @@ let tweetInProgress = false
 let continueWithTweet = false
 let currentEventId
 let timerRef
-let eventCounter = 0
+let eventCounter = 1
 
 function delayedTweet(eventId) {
   // every second:
@@ -21,6 +21,7 @@ function delayedTweet(eventId) {
   //    - kill the timer and call the function
   let timer = UNDO_DELAY_TIME / 1000
 
+  clearInterval(timerRef)
   timerRef = setInterval(() => checkStatus(eventId, timerRef), COUNT_DOWN_TIMER_TIME)
 
   const undoButtonText = document.getElementById(UNDO_BUTTON_TEXT_SELECTOR_ID)
@@ -31,7 +32,6 @@ function delayedTweet(eventId) {
 
     if (currentEventId !== eventId) {
       clearInterval(timerRef)
-      undoButtonDisable({ resetText: true })
       return
     }
 
@@ -52,10 +52,10 @@ function delayedTweet(eventId) {
     }
 
     if (!isTweetable()) {
-      attachEventHandler(1)
       clearInterval(timerRef)
       tweetInProgress = false
       continueWithTweet = false
+      attachEventHandler()
       undoButtonDisable({ resetText: true })
       return
     }
@@ -67,7 +67,6 @@ function delayedTweet(eventId) {
 
 function isTweetable() {
   const tweetProgressBar = document.querySelectorAll(TWITTER_PROGRESSBAR_SELECTOR)
-  console.log('tweetable: ', !!(tweetProgressBar.length > 1))
   return !!(tweetProgressBar.length > 1)
 }
 
@@ -93,8 +92,7 @@ function undoButtonEnable() {
   undoButton.style.opacity = '1'
 }
 
-function attachEventHandler(source) {
-  console.log('Im coming in from: ', source)
+function attachEventHandler() {
   const tweetButton = document.querySelectorAll(TWITTER_BUTTON_SELECTOR)[0]
   tweetButton.addEventListener(
     'click',
@@ -106,11 +104,9 @@ function attachEventHandler(source) {
         event.preventDefault()
         event.stopPropagation()
 
-        attachEventHandler(2)
+        attachEventHandler()
         return false
       }
-
-      console.log('click to tweet')
 
       let id = eventCounter++
       currentEventId = id
@@ -199,17 +195,27 @@ function createNewUndoNode() {
       continueWithTweet = false
       clearInterval(timerRef)
 
-      attachEventHandler(3)
+      attachEventHandler()
     }
   })
 }
 
-setInterval(() => {
-  const undoButton = document.getElementById(UNDO_BUTTON_SELECTOR_ID)
-  let tweetButton = document.querySelectorAll(TWITTER_BUTTON_SELECTOR)[0]
-  if (tweetButton != null) {
-    if (!undoButton) {
-      attachEventHandler(4)
+// Callback function to execute when mutations are observed
+function mutationObserverForTweetButton(mutationsList, observer) {
+  setTimeout(function () {
+    const undoButton = document.getElementById(UNDO_BUTTON_SELECTOR_ID)
+    let tweetButton = document.querySelectorAll(TWITTER_BUTTON_SELECTOR)[0]
+    if (tweetButton != null) {
+      if (!undoButton) {
+        attachEventHandler()
+      }
     }
-  }
-}, DELAY_TIME_START_SEARCH_ON_PAGE)
+  }, DELAY_TIME_ATTACH_UNDO_BUTTON)
+}
+
+// Create an observer instance linked to the callback function
+// Select the node that will be observed for mutations
+const bodyNode = document.querySelector('body')
+const observer = new MutationObserver(mutationObserverForTweetButton)
+// Start observing the target node for configured mutations
+observer.observe(bodyNode, { attributes: false, childList: true, subtree: true })

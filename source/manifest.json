@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Twisome",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "icons": {
     "16": "assets/icons/twisome-64.png",
     "32": "assets/icons/twisome-64.png",
