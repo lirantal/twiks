@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.emoji('🦄', response)
 
   document.getElementById('github__button').addEventListener('click', () => {
-    return openWebPage('https://github.com/lirantal/twisome')
+    return openWebPage('https://github.com/lirantal/twiks')
   })
 
   document.getElementById('donate__button').addEventListener('click', () => {

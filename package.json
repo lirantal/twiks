@@ -1,10 +1,10 @@
 {
-  "name": "twisome",
-  "version": "1.0.1",
-  "description": "Twisome for an Awesome Twitter experience",
+  "name": "twiks",
+  "version": "1.0.2",
+  "description": "Twitter tweaks for a magical experience on Twitter",
   "private": true,
   "license": "MIT",
-  "repository": "https://github.com/lirantal/twisome.git",
+  "repository": "https://github.com/lirantal/twiks.git",
   "author": {
     "name": "Liran Tal",
     "email": "liran.tal@gmail.com",

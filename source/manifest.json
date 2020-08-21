@@ -1,20 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "Twisome",
-  "version": "1.0.1",
+  "name": "twiks",
+  "version": "1.0.2",
   "icons": {
-    "16": "assets/icons/twisome-64.png",
-    "32": "assets/icons/twisome-64.png",
-    "48": "assets/icons/twisome-64.png",
-    "64": "assets/icons/twisome-64.png",
-    "128": "assets/icons/twisome-128.png"
+    "16": "assets/icons/twiks-16.png",
+    "32": "assets/icons/twiks-32.png",
+    "48": "assets/icons/twiks-48.png",
+    "64": "assets/icons/twiks-64.png",
+    "128": "assets/icons/twiks-96.png"
   },
-  "description": "An awesome twitter experience",
-  "homepage_url": "https://github.com/lirantal/twisome",
-  "short_name": "Twisome",
+  "description": "Twitter tweaks for a magical experience on Twitter",
+  "homepage_url": "https://github.com/lirantal/twiks",
+  "short_name": "twiks",
   "permissions": [
-    "http://twitter.com/*",
-    "https://twitter.com/*"
+    "http://*.twitter.com/*",
+    "https://*.twitter.com/*"
   ],
   "__dev__content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "__prod__content_security_policy": "script-src 'self'; object-src 'self'",
@@ -32,11 +32,11 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "assets/icons/twisome-64.png",
-      "32": "assets/icons/twisome-64.png",
-      "48": "assets/icons/twisome-64.png",
-      "64": "assets/icons/twisome-64.png",
-      "128": "assets/icons/twisome-128.png"
+      "16": "assets/icons/twiks-16.png",
+      "32": "assets/icons/twiks-32.png",
+      "48": "assets/icons/twiks-48.png",
+      "64": "assets/icons/twiks-64.png",
+      "128": "assets/icons/twiks-96.png"
     },
     "default_title": "tiny title",
     "__chrome|opera__chrome_style": false,
@@ -52,13 +52,13 @@
     "scripts": [
       "js/background.bundle.js"
     ],
-    "__chrome|opera__persistent": false
+    "__chrome|opera__persistent": true
   },
   "content_scripts": [
     {
       "matches": [
-        "http://twitter.com/*",
-        "https://twitter.com/*"
+        "http://*.twitter.com/*",
+        "https://*.twitter.com/*"
       ],
       "js": [
         "js/contentScript.bundle.js"
