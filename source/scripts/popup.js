@@ -1,4 +1,3 @@
-import 'emoji-log'
 import browser from 'webextension-polyfill'
 
 function openWebPage(url) {
@@ -18,18 +17,30 @@ document.addEventListener('DOMContentLoaded', async () => {
     url
   })
 
-  // eslint-disable-next-line no-console
-  console.emoji('🦄', response)
-
-  document.getElementById('github__button').addEventListener('click', () => {
+  document.getElementById('link_github').addEventListener('click', () => {
     return openWebPage('https://github.com/lirantal/twiks')
   })
 
-  document.getElementById('donate__button').addEventListener('click', () => {
+  document.getElementById('link_author').addEventListener('click', () => {
     return openWebPage('https://twitter.com/liran_tal')
   })
 
-  document.getElementById('options__button').addEventListener('click', () => {
-    return openWebPage('options.html')
+  document.getElementById('link_website').addEventListener('click', () => {
+    return openWebPage('https://twiks.pro')
+  })
+
+  document.getElementById('button_website').addEventListener('click', () => {
+    return openWebPage('https://twiks.pro')
+  })
+
+  document.getElementById('button_twikspro').addEventListener('click', () => {
+    return openWebPage('https://twiks.pro')
+  })
+
+  const links = document.querySelectorAll('.unlock_with_pro')
+  links.forEach(function (linkElement) {
+    linkElement.addEventListener('click', () => {
+      return openWebPage('https://twiks.pro')
+    })
   })
 })
