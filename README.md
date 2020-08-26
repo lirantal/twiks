@@ -2,7 +2,7 @@
 <p align="center">undo for your tweets and an upgraded awesome twitter experience</p>
 
 <p align="center">
-  <img src="https://github.com/lirantal/twiks/blob/master/.github/twiks-demo-1.png" />
+  <img src="https://github.com/lirantal/twiks/blob/master/.github/demo-1.png" />
 </p>
 
 <div align="center">
@@ -29,7 +29,7 @@ Like it? Star ⭐️ it on [GitHub](https://github.com/lirantal/twiks/stargazers
 ## Demo
 
 <p align="center">
-  <img src="https://github.com/lirantal/twiks/blob/master/.github/twiks-demo-1.gif" />
+  <img src="https://github.com/lirantal/twiks/blob/master/.github/demo-1.gif" />
 </p>
 
 ## Bugs
