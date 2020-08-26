@@ -8,38 +8,92 @@
   </head>
 
   <body>
-    <section id="popup">
-      <h2>twiks</h2>
-      <h3>cheers for an awesome twitter experience 🥂</h3>
-      <div class="links__holder">
-        <ul>
-          <li>
-            <a href="https://github.com/lirantal/twiks">
-              <button type="button" id="github__button">
-                twiks on GitHub
-              </button>
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="https://twitter.com/liran_tal">
-              <button type="button" id="donate__button">
-                Say hi to @liran_tal on twitter
-              </button>
-            </a>
-          </li>
-        </ul>
+    <div class="app-wrapper">
+      <div class="text-center">
+        <img class="d-block mx-auto" src="/assets/icons/twiks-48.png" alt="" />
+        <h2>twiks</h2>
+        <p class="lead">
+          Power-up your Twitter productivity with an increased magical experience
+        </p>
+        <hr />
       </div>
-    </section>
 
-    <section id="footer">
-      <footer>
-        <a target="_blank" href="https://icons8.com/icons/set/star-of-bethlehem"
-          >Star of Bethlehem icon</a
-        >
-        icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your twiks magic level</span>
+            <span class="badge badge-secondary badge-pill"></span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div class="text-success">
+                <h6 class="my-0">Undo tweets within 5 seconds</h6>
+                <small class="text-muted"></small>
+              </div>
+              <span class="text-muted">✅</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div class="text-danger">
+                <h6 class="my-0">Customize undo timeout</h6>
+                <small class="text-muted"
+                  ><a class="unlock_with_pro" href="#">UNLOCK WITH TWIKS PRO</a></small
+                >
+              </div>
+              <span class="text-danger">❌</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div class="text-danger">
+                <h6 class="my-0">Pause Twitter's auto-refresh feed</h6>
+                <small class="text-muted"
+                  ><a class="unlock_with_pro" href="#">UNLOCK WITH TWIKS PRO</a></small
+                >
+              </div>
+              <span class="text-danger">❌</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between bg-light">
+              <div class="text-danger">
+                <h6 class="my-0">Quick-links Twitter searches</h6>
+                <small class="text-muted"
+                  ><a class="unlock_with_pro" href="#">UNLOCK WITH TWIKS PRO</a></small
+                >
+              </div>
+              <span class="text-danger">❌</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p>
+          <a id="button_website" href="#" class="btn btn-secondary my-2">website</a>
+          <a id="button_twikspro" href="#" class="btn btn-primary my-2">Get twiks pro</a>
+        </p>
+      </div>
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-6 col-md">
+            <img class="mb-2" src="/assets/icons/twiks-32.png" alt="" />
+            <small class="d-block mb-3 text-muted">Liran Tal © 2020</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>twiks</h5>
+            <ul class="list-unstyled text-small">
+              <li><a id="link_website" class="text-muted" href="#">Website</a></li>
+              <li><a id="link_github" class="text-muted" href="#">Open source</a></li>
+              <li><a id="link_author" class="text-muted" href="#">Author</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a target="_blank" href="https://icons8.com/icons/set/star-of-bethlehem"
+              >Star of Bethlehem icon</a
+            >
+            icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </div>
+        </div>
       </footer>
-    </section>
+    </div>
   </body>
 </html>
