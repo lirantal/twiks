@@ -1,6 +1,9 @@
 # ignore haters
 haters/
 
+# mac dirs
+.DS_Store
+
 ### Node ###
 # Logs
 logs
