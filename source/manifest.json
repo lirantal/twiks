@@ -7,7 +7,8 @@
     "32": "assets/icons/twiks-32.png",
     "48": "assets/icons/twiks-48.png",
     "64": "assets/icons/twiks-64.png",
-    "128": "assets/icons/twiks-96.png"
+    "96": "assets/icons/twiks-96.png",
+    "128": "assets/icons/twiks-128.png"
   },
   "description": "Power-up your productivity on Twitter with undo tweets button, pause live feed, and more magic!",
   "homepage_url": "https://github.com/lirantal/twiks",
@@ -36,7 +37,8 @@
       "32": "assets/icons/twiks-32.png",
       "48": "assets/icons/twiks-48.png",
       "64": "assets/icons/twiks-64.png",
-      "128": "assets/icons/twiks-96.png"
+      "96": "assets/icons/twiks-96.png",
+      "128": "assets/icons/twiks-128.png"
     },
     "default_title": "tiny title",
     "__chrome|opera__chrome_style": false,
