@@ -202,6 +202,8 @@ function createNewUndoNode() {
 
 // Callback function to execute when mutations are observed
 function mutationObserverForTweetButton(mutationsList, observer) {
+  // swop urls if content added
+  swopUrls()
   setTimeout(function () {
     const undoButton = document.getElementById(UNDO_BUTTON_SELECTOR_ID)
     let tweetButton = document.querySelectorAll(TWITTER_BUTTON_SELECTOR)[0]
@@ -213,6 +215,23 @@ function mutationObserverForTweetButton(mutationsList, observer) {
   }, DELAY_TIME_ATTACH_UNDO_BUTTON)
 }
 
+// Swop the title from twitter t.co to the url
+function swopUrls() {
+  // skip title boxes (they do not provide a title)
+  document.querySelectorAll('A[href*="https://t.co/"]').forEach((el) => {
+    if (el.title) {
+      // swopped href to title
+      el.href = el.title
+    } else if ((el.role = 'link')) {
+      //  `no title for ${el.href}`
+      // unfurlr?
+    }
+  })
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  swopUrls()
+})
 // Create an observer instance linked to the callback function
 // Select the node that will be observed for mutations
 const bodyNode = document.querySelector('body')
