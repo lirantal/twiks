@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "twiks",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "icons": {
     "16": "assets/icons/twiks-16.png",
     "32": "assets/icons/twiks-32.png",
@@ -13,12 +13,16 @@
   "description": "Power-up your productivity on Twitter with undo tweets button, pause live feed, and more magic!",
   "homepage_url": "https://github.com/lirantal/twiks",
   "short_name": "twiks",
-  "permissions": [
+  "host_permissions": [
     "http://*.twitter.com/*",
     "https://*.twitter.com/*"
   ],
-  "__dev__content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "__prod__content_security_policy": "script-src 'self'; object-src 'self'",
+  "__dev__content_security_policy": {
+    "extension_pages": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  },
+  "__prod__content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
   "__chrome|firefox__author": "lirantal",
   "__opera__developer": {
     "name": "lirantal"
@@ -28,9 +32,9 @@
       "id": "{754FB1AD-CC3B-4856-B6A0-7786F8CA9D17}"
     }
   },
-  "__chrome__minimum_chrome_version": "49",
+  "__chrome__minimum_chrome_version": "88",
   "__opera__minimum_opera_version": "36",
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/icons/twiks-16.png",
@@ -40,21 +44,15 @@
       "96": "assets/icons/twiks-96.png",
       "128": "assets/icons/twiks-128.png"
     },
-    "default_title": "tiny title",
-    "__chrome|opera__chrome_style": false,
-    "__firefox__browser_style": false
+    "default_title": "tiny title"
   },
   "__chrome|opera__options_page": "options.html",
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": true,
-    "__chrome__chrome_style": false
+    "open_in_tab": true
   },
   "background": {
-    "scripts": [
-      "js/background.bundle.js"
-    ],
-    "__chrome|opera__persistent": true
+    "service_worker": "js/background.bundle.js"
   },
   "content_scripts": [
     {
@@ -69,6 +67,12 @@
     }
   ],
   "web_accessible_resources": [
-    "js/injected.bundle.js"
+    {
+      "resources": ["js/injected.bundle.js"],
+      "matches": [
+        "http://*.twitter.com/*",
+        "https://*.twitter.com/*"
+      ]
+    }
   ]
 }
