@@ -213,9 +213,11 @@ function mutationObserverForTweetButton(mutationsList, observer) {
   }, DELAY_TIME_ATTACH_UNDO_BUTTON)
 }
 
-// Create an observer instance linked to the callback function
-// Select the node that will be observed for mutations
-const bodyNode = document.querySelector('body')
-const observer = new MutationObserver(mutationObserverForTweetButton)
-// Start observing the target node for configured mutations
-observer.observe(bodyNode, { attributes: false, childList: true, subtree: true })
+window.addEventListener('DOMContentLoaded', (event) => {
+  // Create an observer instance linked to the callback function
+  // Select the node that will be observed for mutations
+  const bodyNode = document.querySelector('body')
+  const observer = new MutationObserver(mutationObserverForTweetButton)
+  // Start observing the target node for configured mutations
+  observer.observe(bodyNode, { attributes: false, childList: true, subtree: true })
+})
