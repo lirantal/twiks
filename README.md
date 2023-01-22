@@ -32,6 +32,14 @@ Like it? Star ⭐️ it on [GitHub](https://github.com/lirantal/twiks/stargazers
   <img src="https://github.com/lirantal/twiks/blob/master/.github/demo-1.gif" />
 </p>
 
+## Build the project
+
+1. Run `fnm use` in the project directory. It uses the [fnm](https://github.com/Schniz/fnm) project to manage Node.js versions, and is needed to strictly use a supported Node.js version to build the project (Node.js 14).
+2. Run `yarn install --frozen-lockfile` to install dependencies.
+3. Run `yarn build` to build the extensions
+
+Note, you'll need `python2` installed on your system to build the project.
+
 ## Bugs
 
 Please file an issue [here](https://github.com/lirantal/twiks/issues/new) for bugs, missing documentation, or unexpected behavior.
