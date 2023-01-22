@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "twiks",
-  "version": "1.0.5",
+  "version": "1.2.0",
   "icons": {
     "16": "assets/icons/twiks-16.png",
     "32": "assets/icons/twiks-32.png",
