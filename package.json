@@ -75,5 +75,6 @@
     "wext-manifest-loader": "^2.2.0",
     "wext-manifest-webpack-plugin": "^1.2.1",
     "zip-webpack-plugin": "^3.0.0"
-  }
+  },
+  "packageManager": "npm@11.21.0"
 }
