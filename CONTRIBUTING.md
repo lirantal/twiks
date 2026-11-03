@@ -75,11 +75,13 @@ The same applies to issues: prefix the title with 🤖🤖🤖 if it was opened 
 
 ## Package-manager pin
 
-Run `bash .github/scripts/setup-npm.sh` from the repository to install the exact
-npm version in `package.json#packageManager`, then install dependencies using
-the existing project setup instructions. CI uses the same setup script.
+CI uses Yarn Classic, pinned by `package.json#packageManager`.
+The auxiliary npm version used for tooling is pinned in `.npm-version`.
+Run `bash .github/scripts/setup-npm.sh` and then
+`bash .github/scripts/setup-yarn.sh` to install those exact versions.
+The Yarn setup writes its bin directory to `GITHUB_PATH` in CI; locally add
+`${TMPDIR:-/tmp}/pinned-yarn/bin` to your `PATH` before running Yarn.
 
-Upgrade the pin and matching lockfile metadata together in a maintenance PR.
-Choose a release at least 30 days old and run the project checks with it.
-Keep `.npmrc` and `pnpm-workspace.yaml` security policies enabled.
+Upgrade the pins in a maintenance PR, choose releases at least 30 days old,
+and run the project checks. The bootstrap keeps `.npmrc` policies enabled.
 Periodic upgrade automation is not configured.
